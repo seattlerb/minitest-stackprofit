@@ -1,0 +1,85 @@
+= minitest-stackprofit
+
+home :: https://github.com/seattlerb/minitest-stackprofit
+rdoc :: http://docs.seattlerb.org/minitest-stackprofit
+
+== DESCRIPTION:
+
+A minitest plugin that runs your tests and outputs a stackprof
+profile. This lets you quickly and easily determine the bottlenecks in
+your code under test!
+
+* Make it right. (test first)
+* Make it work.  (get to green)
+* Make it fast.  (optimize)
+
+== FEATURES/PROBLEMS:
+
+* Provides a `--stackprof <path>` argument so you can make multiple
+  profiles to compare over time.
+* Provides a `--stackprof-type (wall|cpu|object)` argument so you can
+  profile in different ways.
+
+== SYNOPSIS:
+
+  % rake TESTOPTS="--stackprof=profile.dump"
+  Run options: -g --seed 59120
+
+  # Running:
+
+  ..............................................................................
+  ..............................................................................
+  ..............................................................................
+  ...................................................
+
+  Finished in 0.145769s, 1955.1482 runs/s, 5769.4023 assertions/s.
+
+  285 runs, 841 assertions, 0 failures, 0 errors, 0 skips
+
+  % stackprof profile.dump
+  ==================================
+    Mode: wall(1000)
+    Samples: 999 (0.20% miss rate)
+    GC: 0 (0.00%)
+  ==================================
+       TOTAL    (pct)     SAMPLES    (pct)     FRAME
+         999 (100.0%)         999 (100.0%)     Something#very_slow
+         999 (100.0%)           0   (0.0%)     TestMinitest::TestStackprof#test_wall_slow
+         999 (100.0%)           0   (0.0%)     Minitest::Test#run
+         999 (100.0%)           0   (0.0%)     Minitest::Test#capture_exceptions
+         ... blah blah blah ...
+
+== REQUIREMENTS:
+
+* minitest
+* stackprof (`gem install stackprof`)
+* ruby 2.6+
+
+== INSTALL:
+
+* [sudo] gem install minitest-stackprofit
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) Ryan Davis, seattle.rb
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

@@ -1,0 +1,7 @@
+.autotest
+History.rdoc
+Manifest.txt
+README.rdoc
+Rakefile
+lib/minitest/stackprofit_plugin.rb
+test/minitest/test_stackprofit.rb
