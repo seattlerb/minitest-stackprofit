@@ -8,7 +8,7 @@ module Minitest
   @stackprof_path = nil
   @stackprof_type = :wall
 
-  def self.plugin_stackprof_options opts, options # :nodoc:
+  def self.plugin_stackprofit_options opts, options # :nodoc:
     opts.on "--stackprof [path]", String, "Save profiling to [path]." do |s|
       @stackprof_path = s || "stackprof.dump"
     end
@@ -18,7 +18,7 @@ module Minitest
     end
   end
 
-  def self.plugin_stackprof_init options # :nodoc:
+  def self.plugin_stackprofit_init options # :nodoc:
     if @stackprof_path then
       require "stackprof"
 
