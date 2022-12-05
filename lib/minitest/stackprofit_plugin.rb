@@ -2,7 +2,7 @@ require "minitest"
 
 module Minitest
   module Stackprofit
-    VERSION = "1.0.0"
+    VERSION = "1.0.1"
   end
 
   @stackprof_path = nil

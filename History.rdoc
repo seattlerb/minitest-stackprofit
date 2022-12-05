@@ -1,6 +1,11 @@
+=== 1.0.1 / 2022-12-05
+
+* 1 bug fix:
+
+  * Fixed plugin method names. (lcreid)
+
 === 1.0.0 / 2022-01-04
 
 * 1 major enhancement
 
   * Birthday!
-
